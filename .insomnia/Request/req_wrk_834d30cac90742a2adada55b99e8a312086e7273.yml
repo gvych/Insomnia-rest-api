@@ -1,0 +1,23 @@
+_id: req_wrk_834d30cac90742a2adada55b99e8a312086e7273
+type: Request
+parentId: wrk_834d30cac90742a2adada55b99e8a312
+modified: 1635148481586
+created: 1635148481586
+url: "{{ base_url
+  }}/chains/main/blocks/BM2PbtukTjuQJp22pgEpRK35FeptaCwhNQDRKCAEQyBoemRCV6j/con\
+  text/contracts/tz1VJEC3vN7AcQEF8sDDDBrPzYsqEQro1tF6/counter"
+name: /chains/main/blocks/BM2PbtukTjuQJp22pgEpRK35FeptaCwhNQDRKCAEQyBoemRCV6j/context/contracts/tz1VJEC3vN7AcQEF8sDDDBrPzYsqEQro1tF6/counter
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1635148481586
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

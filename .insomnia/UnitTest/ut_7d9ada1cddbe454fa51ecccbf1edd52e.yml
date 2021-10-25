@@ -1,0 +1,15 @@
+_id: ut_7d9ada1cddbe454fa51ecccbf1edd52e
+type: UnitTest
+parentId: uts_e6ef992b0ac64b61b5c9924fbfb8b5a7
+modified: 1635149049718
+created: 1635148875846
+requestId: req_wrk_834d30cac90742a2adada55b99e8a3129ef55a69
+name: Chain 2
+code: >-
+  const response1 = await insomnia.send();
+
+  expect(response1.status).to.equal(200);
+
+  const response2 = await insomnia.send('req_wrk_834d30cac90742a2adada55b99e8a31240ef1aac');
+
+  expect(response2.status).to.equal(200);

@@ -1,0 +1,14 @@
+_id: env_env_1d2bd12d78317a198713c797df898ab5e45b3aa6_sub
+type: Environment
+parentId: env_1d2bd12d78317a198713c797df898ab5e45b3aa6
+modified: 1635148481603
+created: 1635148481603
+name: OpenAPI env
+data:
+  scheme: https
+  base_path: /gvych/tezos-stub/0.0.1
+  host: virtserver.swaggerhub.com
+dataPropertyOrder: null
+color: null
+isPrivate: false
+metaSortKey: 1635148481603

@@ -1,0 +1,23 @@
+_id: req_wrk_834d30cac90742a2adada55b99e8a3129ef55a69
+type: Request
+parentId: wrk_834d30cac90742a2adada55b99e8a312
+modified: 1635148481600
+created: 1635148481600
+url: "{{ base_url
+  }}/chains/main/blocks/head/context/contracts/KT19cbBB2rPDAdvWLGr4MBroLYSQUgiD\
+  ufmG/entrypoints"
+name: /chains/main/blocks/head/context/contracts/KT19cbBB2rPDAdvWLGr4MBroLYSQUgiDufmG/entrypoints
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1635148481600
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

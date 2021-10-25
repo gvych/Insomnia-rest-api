@@ -1,0 +1,1144 @@
+_id: spc_025a065e94a740088cf849675701f390
+type: ApiSpec
+parentId: wrk_834d30cac90742a2adada55b99e8a312
+modified: 1635148800207
+created: 1635148481620
+fileName: Tesoz node RPC 0.0.1
+contents: >
+  openapi: 3.0.1
+
+  info:
+    title: Tesoz node RPC
+    description: Calls to tzk node
+    version: 0.0.1
+  servers:
+
+  - url: https://virtserver.swaggerhub.com/gvych/tezos-stub/0.0.1
+    description: SwaggerHub API Auto Mocking
+  - url: http://localhost:8080
+
+  - url: https://florencenet.wert.ecadinfra.com
+
+  paths:
+    /chains/main/blocks/head/context/contracts/KT19cbBB2rPDAdvWLGr4MBroLYSQUgiDufmG/entrypoints:
+      get:
+        description: Auto generated using Swagger Inspector
+        operationId: chainsMainBlocksHeadContextContractsKT19cbBB2rPDAdvWLGr4MBroLYSQUgiDufmGEntrypointsGET
+        responses:
+          "200":
+            description: Auto generated using Swagger Inspector
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/inline_response_200'
+                example: {"entrypoints":{"set_admin":{"prim":"address"},"sell":{"prim":"pair","args":[{"prim":"pair","args":[{"prim":"address","annots":["%fa2_address"]},{"prim":"nat","annots":["%token_id"]}],"annots":["%sale_token"]},{"prim":"mutez","annots":["%price"]},{"prim":"nat","annots":["%amount"]}]},"pause":{"prim":"bool"},"confirm_admin":{"prim":"unit"},"cancel":{"prim":"nat"},"buy":{"prim":"pair","args":[{"prim":"nat","annots":["%sale_id"]},{"prim":"address","annots":["%buyer"]}]},"admin":{"prim":"or","args":[{"prim":"or","args":[{"prim":"unit","annots":["%confirm_admin"]},{"prim":"bool","annots":["%pause"]}]},{"prim":"address","annots":["%set_admin"]}]}}}
+        x-swagger-router-controller: Default
+    /chains/main/blocks/head/helpers/scripts/run_operation:
+      post:
+        description: Auto generated using Swagger Inspector
+        operationId: chainsMainBlocksHeadHelpersScriptsRun_operationPOST
+        requestBody:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/scripts_run_operation_body'
+              examples:
+                "0":
+                  value: "{\"operation\":{\"branch\":\"BLWB8GyNbv5XeU8EHQgQpN53f9HmC3994L8qZZ7hwUMqs7UkfSK\"\
+                    ,\"contents\":[{\"kind\":\"transaction\",\"source\":\"tz1VJEC3vN7AcQEF8sDDDBrPzYsqEQro1tF6\"\
+                    ,\"fee\":\"100000\",\"counter\":\"431715\",\"gas_limit\":\"400000\"\
+                    ,\"storage_limit\":\"257\",\"amount\":\"1000000\",\"destination\"\
+                    :\"KT19cbBB2rPDAdvWLGr4MBroLYSQUgiDufmG\",\"parameters\":{\"entrypoint\"\
+                    :\"buy\",\"value\":{\"prim\":\"Pair\",\"args\":[{\"int\":\"3\"},{\"\
+                    string\":\"tz1TDTYSSw8FVYWZjqjhGoQo2SeZjy3EYL3c\"}]}}}],\"signature\"\
+                    :\"edsigtkpiSSschcaCt9pUVrpNPf7TTcgvgDEDD6NCEHMy8NNQJCGnMfLZzYoQj74yLjo9wx6MPVV29CvVzgi7qEcEUok3k7AuMg\"\
+                    },\"chain_id\":\"NetXxkAx4woPLyu\"}\n"
+        responses:
+          "200":
+            description: Auto generated using Swagger Inspector
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties: {}
+                  example: "{\"contents\":[{\"kind\":\"transaction\",\"source\":\"tz1VJEC3vN7AcQEF8sDDDBrPzYsqEQro1tF6\"\
+                    ,\"fee\":\"100000\",\"counter\":\"431715\",\"gas_limit\":\"400000\"\
+                    ,\"storage_limit\":\"257\",\"amount\":\"1000000\",\"destination\"\
+                    :\"KT19cbBB2rPDAdvWLGr4MBroLYSQUgiDufmG\",\"parameters\":{\"entrypoint\"\
+                    :\"buy\",\"value\":{\"prim\":\"Pair\",\"args\":[{\"int\":\"3\"},{\"\
+                    string\":\"tz1TDTYSSw8FVYWZjqjhGoQo2SeZjy3EYL3c\"}]}},\"metadata\"\
+                    :{\"balance_updates\":[{\"kind\":\"contract\",\"contract\":\"tz1VJEC3vN7AcQEF8sDDDBrPzYsqEQro1tF6\"\
+                    ,\"change\":\"-100000\",\"origin\":\"block\"},{\"kind\":\"freezer\"\
+                    ,\"category\":\"fees\",\"delegate\":\"tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU\"\
+                    ,\"cycle\":271,\"change\":\"100000\",\"origin\":\"block\"}],\"operation_result\"\
+                    :{\"status\":\"failed\",\"errors\":[{\"kind\":\"temporary\",\"id\"\
+                    :\"proto.009-PsFLoren.michelson_v1.runtime_error\",\"contract_handle\"\
+                    :\"KT19cbBB2rPDAdvWLGr4MBroLYSQUgiDufmG\",\"contract_code\":[{\"\
+                    prim\":\"parameter\",\"args\":[{\"prim\":\"or\",\"args\":[{\"prim\"\
+                    :\"or\",\"args\":[{\"prim\":\"or\",\"args\":[{\"prim\":\"or\",\"\
+                    args\":[{\"prim\":\"unit\",\"annots\":[\"%confirm_admin\"]},{\"\
+                    prim\":\"bool\",\"annots\":[\"%pause\"]}]},{\"prim\":\"address\"\
+                    ,\"annots\":[\"%set_admin\"]}],\"annots\":[\"%admin\"]},{\"prim\"\
+                    :\"pair\",\"args\":[{\"prim\":\"nat\",\"annots\":[\"%sale_id\"]},{\"\
+                    prim\":\"address\",\"annots\":[\"%buyer\"]}],\"annots\":[\"%buy\"\
+                    ]}]},{\"prim\":\"or\",\"args\":[{\"prim\":\"nat\",\"annots\":[\"\
+                    %cancel\"]},{\"prim\":\"pair\",\"args\":[{\"prim\":\"pair\",\"args\"\
+                    :[{\"prim\":\"address\",\"annots\":[\"%fa2_address\"]},{\"prim\"\
+                    :\"nat\",\"annots\":[\"%token_id\"]}],\"annots\":[\"%sale_token\"\
+                    ]},{\"prim\":\"pair\",\"args\":[{\"prim\":\"mutez\",\"annots\":[\"\
+                    %price\"]},{\"prim\":\"nat\",\"annots\":[\"%amount\"]}]}],\"annots\"\
+                    :[\"%sell\"]}]}]}]},{\"prim\":\"storage\",\"args\":[{\"prim\":\"\
+                    pair\",\"args\":[{\"prim\":\"option\",\"args\":[{\"prim\":\"pair\"\
+                    ,\"args\":[{\"prim\":\"pair\",\"args\":[{\"prim\":\"address\",\"\
+                    annots\":[\"%admin\"]},{\"prim\":\"bool\",\"annots\":[\"%paused\"\
+                    ]}]},{\"prim\":\"option\",\"args\":[{\"prim\":\"address\"}],\"annots\"\
+                    :[\"%pending_admin\"]}]}],\"annots\":[\"%admin\"]},{\"prim\":\"\
+                    pair\",\"args\":[{\"prim\":\"big_map\",\"args\":[{\"prim\":\"nat\"\
+                    },{\"prim\":\"pair\",\"args\":[{\"prim\":\"address\",\"annots\"\
+                    :[\"%seller\"]},{\"prim\":\"pair\",\"args\":[{\"prim\":\"pair\"\
+                    ,\"args\":[{\"prim\":\"address\",\"annots\":[\"%fa2_address\"]},{\"\
+                    prim\":\"nat\",\"annots\":[\"%token_id\"]}],\"annots\":[\"%sale_token\"\
+                    ]},{\"prim\":\"pair\",\"args\":[{\"prim\":\"mutez\",\"annots\":[\"\
+                    %price\"]},{\"prim\":\"nat\",\"annots\":[\"%amount\"]}]}],\"annots\"\
+                    :[\"%sale_data\"]}]}],\"annots\":[\"%sales\"]},{\"prim\":\"nat\"\
+                    ,\"annots\":[\"%next_sale_id\"]}]}]}]},{\"prim\":\"code\",\"args\"\
+                    :[[{\"prim\":\"LAMBDA\",\"args\":[{\"prim\":\"option\",\"args\"\
+                    :[{\"prim\":\"pair\",\"args\":[{\"prim\":\"pair\",\"args\":[{\"\
+                    prim\":\"address\"},{\"prim\":\"bool\"}]},{\"prim\":\"option\",\"\
+                    args\":[{\"prim\":\"address\"}]}]}]},{\"prim\":\"unit\"},[{\"prim\"\
+                    :\"IF_NONE\",\"args\":[[{\"prim\":\"UNIT\"}],[{\"prim\":\"CAR\"\
+                    },{\"prim\":\"CAR\"},{\"prim\":\"SENDER\"},{\"prim\":\"COMPARE\"\
+                    },{\"prim\":\"NEQ\"},{\"prim\":\"IF\",\"args\":[[{\"prim\":\"PUSH\"\
+                    ,\"args\":[{\"prim\":\"string\"},{\"string\":\"NOT_AN_ADMIN\"}]},{\"\
+                    prim\":\"FAILWITH\"}],[{\"prim\":\"UNIT\"}]]}]]}]]},{\"prim\":\"\
+                    LAMBDA\",\"args\":[{\"prim\":\"option\",\"args\":[{\"prim\":\"pair\"\
+                    ,\"args\":[{\"prim\":\"pair\",\"args\":[{\"prim\":\"address\"},{\"\
+                    prim\":\"bool\"}]},{\"prim\":\"option\",\"args\":[{\"prim\":\"address\"\
+                    }]}]}]},{\"prim\":\"unit\"},[{\"prim\":\"IF_NONE\",\"args\":[[{\"\
+                    prim\":\"UNIT\"}],[{\"prim\":\"CAR\"},{\"prim\":\"CDR\"},{\"prim\"\
+                    :\"IF\",\"args\":[[{\"prim\":\"PUSH\",\"args\":[{\"prim\":\"string\"\
+                    },{\"string\":\"PAUSED\"}]},{\"prim\":\"FAILWITH\"}],[{\"prim\"\
+                    :\"UNIT\"}]]}]]}]]},{\"prim\":\"LAMBDA\",\"args\":[{\"prim\":\"\
+                    pair\",\"args\":[{\"prim\":\"pair\",\"args\":[{\"prim\":\"pair\"\
+                    ,\"args\":[{\"prim\":\"address\"},{\"prim\":\"nat\"}]},{\"prim\"\
+                    :\"pair\",\"args\":[{\"prim\":\"nat\"},{\"prim\":\"address\"}]}]},{\"\
+                    prim\":\"address\"}]},{\"prim\":\"operation\"},[{\"prim\":\"UNPAIR\"\
+                    },{\"prim\":\"UNPAIR\"},{\"prim\":\"UNPAIR\"},{\"prim\":\"DIG\"\
+                    ,\"args\":[{\"int\":\"2\"}]},{\"prim\":\"UNPAIR\"},{\"prim\":\"\
+                    DIG\",\"args\":[{\"int\":\"2\"}]},{\"prim\":\"CONTRACT\",\"args\"\
+                    :[{\"prim\":\"list\",\"args\":[{\"prim\":\"pair\",\"args\":[{\"\
+                    prim\":\"address\",\"annots\":[\"%from_\"]},{\"prim\":\"list\",\"\
+                    args\":[{\"prim\":\"pair\",\"args\":[{\"prim\":\"address\",\"annots\"\
+                    :[\"%to_\"]},{\"prim\":\"pair\",\"args\":[{\"prim\":\"nat\",\"annots\"\
+                    :[\"%token_id\"]},{\"prim\":\"nat\",\"annots\":[\"%amount\"]}]}]}],\"\
+                    annots\":[\"%txs\"]}]}]}],\"annots\":[\"%transfer\"]},{\"prim\"\
+                    :\"IF_NONE\",\"args\":[[{\"prim\":\"DROP\",\"args\":[{\"int\":\"\
+                    4\"}]},{\"prim\":\"PUSH\",\"args\":[{\"prim\":\"string\"},{\"string\"\
+                    :\"CANNOT_INVOKE_FA2_TRANSFER\"}]},{\"prim\":\"FAILWITH\"}],[{\"\
+                    prim\":\"PUSH\",\"args\":[{\"prim\":\"mutez\"},{\"int\":\"0\"}]},{\"\
+                    prim\":\"NIL\",\"args\":[{\"prim\":\"pair\",\"args\":[{\"prim\"\
+                    :\"address\"},{\"prim\":\"list\",\"args\":[{\"prim\":\"pair\",\"\
+                    args\":[{\"prim\":\"address\"},{\"prim\":\"pair\",\"args\":[{\"\
+                    prim\":\"nat\"},{\"prim\":\"nat\"}]}]}]}]}]},{\"prim\":\"DIG\",\"\
+                    args\":[{\"int\":\"4\"}]},{\"prim\":\"NIL\",\"args\":[{\"prim\"\
+                    :\"pair\",\"args\":[{\"prim\":\"address\"},{\"prim\":\"pair\",\"\
+                    args\":[{\"prim\":\"nat\"},{\"prim\":\"nat\"}]}]}]},{\"prim\":\"\
+                    DIG\",\"args\":[{\"int\":\"7\"}]},{\"prim\":\"DIG\",\"args\":[{\"\
+                    int\":\"7\"}]},{\"prim\":\"DIG\",\"args\":[{\"int\":\"7\"}]},{\"\
+                    prim\":\"SWAP\"},{\"prim\":\"PAIR\"},{\"prim\":\"SWAP\"},{\"prim\"\
+                    :\"PAIR\"},{\"prim\":\"CONS\"},{\"prim\":\"SWAP\"},{\"prim\":\"\
+                    PAIR\"},{\"prim\":\"CONS\"},{\"prim\":\"TRANSFER_TOKENS\"}]]}]]},{\"\
+                    prim\":\"LAMBDA\",\"args\":[{\"prim\":\"string\"},{\"prim\":\"string\"\
+                    },[{\"prim\":\"PUSH\",\"args\":[{\"prim\":\"string\"},{\"string\"\
+                    :\")\"}]},{\"prim\":\"SWAP\"},{\"prim\":\"CONCAT\"},{\"prim\":\"\
+                    PUSH\",\"args\":[{\"prim\":\"string\"},{\"string\":\"DON'T TRANSFER\
+                    \ TEZ TO THIS ENTRYPOINT (\"}]},{\"prim\":\"CONCAT\"}]]},{\"prim\"\
+                    :\"DIG\",\"args\":[{\"int\":\"4\"}]},{\"prim\":\"UNPAIR\"},{\"prim\"\
+                    :\"IF_LEFT\",\"args\":[[{\"prim\":\"DIG\",\"args\":[{\"int\":\"\
+                    2\"}]},{\"prim\":\"DROP\"},{\"prim\":\"IF_LEFT\",\"args\":[[{\"\
+                    prim\":\"DIG\",\"args\":[{\"int\":\"2\"}]},{\"prim\":\"DROP\"},{\"\
+                    prim\":\"DIG\",\"args\":[{\"int\":\"2\"}]},{\"prim\":\"DROP\"},{\"\
+                    prim\":\"SWAP\"},{\"prim\":\"DUP\"},{\"prim\":\"DUG\",\"args\":[{\"\
+                    int\":\"2\"}]},{\"prim\":\"CAR\"},{\"prim\":\"SWAP\"},{\"prim\"\
+                    :\"IF_LEFT\",\"args\":[[{\"prim\":\"IF_LEFT\",\"args\":[[{\"prim\"\
+                    :\"DROP\"},{\"prim\":\"DIG\",\"args\":[{\"int\":\"2\"}]},{\"prim\"\
+                    :\"DROP\"},{\"prim\":\"IF_NONE\",\"args\":[[{\"prim\":\"PUSH\",\"\
+                    args\":[{\"prim\":\"string\"},{\"string\":\"NO_ADMIN_CAPABILITIES_CONFIGURED\"\
+                    }]},{\"prim\":\"FAILWITH\"}],[{\"prim\":\"DUP\"},{\"prim\":\"CDR\"\
+                    },{\"prim\":\"IF_NONE\",\"args\":[[{\"prim\":\"DROP\"},{\"prim\"\
+                    :\"PUSH\",\"args\":[{\"prim\":\"string\"},{\"string\":\"NO_PENDING_ADMIN\"\
+                    }]},{\"prim\":\"FAILWITH\"}],[{\"prim\":\"SENDER\"},{\"prim\":\"\
+                    COMPARE\"},{\"prim\":\"EQ\"},{\"prim\":\"IF\",\"args\":[[{\"prim\"\
+                    :\"NONE\",\"args\":[{\"prim\":\"address\"}]},{\"prim\":\"SWAP\"\
+                    },{\"prim\":\"CAR\"},{\"prim\":\"CDR\"},{\"prim\":\"SENDER\"},{\"\
+                    prim\":\"PAIR\"},{\"prim\":\"PAIR\"},{\"prim\":\"SOME\"}],[{\"prim\"\
+                    :\"DROP\"},{\"prim\":\"PUSH\",\"args\":[{\"prim\":\"string\"},{\"\
+                    string\":\"NOT_A_PENDING_ADMIN\"}]},{\"prim\":\"FAILWITH\"}]]}]]}]]},{\"\
+                    prim\":\"NIL\",\"args\":[{\"prim\":\"operation\"}]},{\"prim\":\"\
+                    PAIR\"}],[{\"prim\":\"SWAP\"},{\"prim\":\"DUP\"},{\"prim\":\"DUG\"\
+                    ,\"args\":[{\"int\":\"2\"}]},{\"prim\":\"DIG\",\"args\":[{\"int\"\
+                    :\"4\"}]},{\"prim\":\"SWAP\"},{\"prim\":\"EXEC\"},{\"prim\":\"DROP\"\
+                    },{\"prim\":\"SWAP\"},{\"prim\":\"IF_NONE\",\"args\":[[{\"prim\"\
+                    :\"DROP\"},{\"prim\":\"PUSH\",\"args\":[{\"prim\":\"string\"},{\"\
+                    string\":\"NO_ADMIN_CAPABILITIES_CONFIGURED\"}]},{\"prim\":\"FAILWITH\"\
+                    }],[{\"prim\":\"DUP\"},{\"prim\":\"CDR\"},{\"prim\":\"DUG\",\"args\"\
+                    :[{\"int\":\"2\"}]},{\"prim\":\"CAR\"},{\"prim\":\"CAR\"},{\"prim\"\
+                    :\"PAIR\"},{\"prim\":\"PAIR\"},{\"prim\":\"SOME\"}]]},{\"prim\"\
+                    :\"NIL\",\"args\":[{\"prim\":\"operation\"}]},{\"prim\":\"PAIR\"\
+                    }]]}],[{\"prim\":\"SWAP\"},{\"prim\":\"DUP\"},{\"prim\":\"DUG\"\
+                    ,\"args\":[{\"int\":\"2\"}]},{\"prim\":\"DIG\",\"args\":[{\"int\"\
+                    :\"4\"}]},{\"prim\":\"SWAP\"},{\"prim\":\"EXEC\"},{\"prim\":\"DROP\"\
+                    },{\"prim\":\"SWAP\"},{\"prim\":\"IF_NONE\",\"args\":[[{\"prim\"\
+                    :\"DROP\"},{\"prim\":\"PUSH\",\"args\":[{\"prim\":\"string\"},{\"\
+                    string\":\"NO_ADMIN_CAPABILITIES_CONFIGURED\"}]},{\"prim\":\"FAILWITH\"\
+                    }],[{\"prim\":\"SWAP\"},{\"prim\":\"SOME\"},{\"prim\":\"SWAP\"},{\"\
+                    prim\":\"CAR\"},{\"prim\":\"PAIR\"},{\"prim\":\"SOME\"}]]},{\"prim\"\
+                    :\"NIL\",\"args\":[{\"prim\":\"operation\"}]},{\"prim\":\"PAIR\"\
+                    }]]},{\"prim\":\"UNPAIR\"},{\"prim\":\"DUG\",\"args\":[{\"int\"\
+                    :\"2\"}]},{\"prim\":\"UPDATE\",\"args\":[{\"int\":\"1\"}]},{\"prim\"\
+                    :\"SWAP\"},{\"prim\":\"PAIR\"}],[{\"prim\":\"DIG\",\"args\":[{\"\
+                    int\":\"4\"}]},{\"prim\":\"DROP\"},{\"prim\":\"SWAP\"},{\"prim\"\
+                    :\"DUP\"},{\"prim\":\"DUG\",\"args\":[{\"int\":\"2\"}]},{\"prim\"\
+                    :\"CAR\"},{\"prim\":\"DIG\",\"args\":[{\"int\":\"4\"}]},{\"prim\"\
+                    :\"SWAP\"},{\"prim\":\"EXEC\"},{\"prim\":\"DROP\"},{\"prim\":\"\
+                    SWAP\"},{\"prim\":\"DUP\"},{\"prim\":\"DUG\",\"args\":[{\"int\"\
+                    :\"2\"}]},{\"prim\":\"GET\",\"args\":[{\"int\":\"3\"}]},{\"prim\"\
+                    :\"SWAP\"},{\"prim\":\"DUP\"},{\"prim\":\"DUG\",\"args\":[{\"int\"\
+                    :\"2\"}]},{\"prim\":\"CAR\"},{\"prim\":\"GET\"},{\"prim\":\"IF_NONE\"\
+                    ,\"args\":[[{\"prim\":\"PUSH\",\"args\":[{\"prim\":\"string\"},{\"\
+                    string\":\"NO_SALE\"}]},{\"prim\":\"FAILWITH\"}],[]]},{\"prim\"\
+                    :\"DUP\"},{\"prim\":\"CDR\"},{\"prim\":\"GET\",\"args\":[{\"int\"\
+                    :\"3\"}]},{\"prim\":\"DUP\"},{\"prim\":\"AMOUNT\"},{\"prim\":\"\
+                    COMPARE\"},{\"prim\":\"NEQ\"},{\"prim\":\"IF\",\"args\":[[{\"prim\"\
+                    :\"AMOUNT\"},{\"prim\":\"SWAP\"},{\"prim\":\"DUP\"},{\"prim\":\"\
+                    DUG\",\"args\":[{\"int\":\"2\"}]},{\"prim\":\"PUSH\",\"args\":[{\"\
+                    prim\":\"string\"},{\"string\":\"WRONG_TEZ_PRICE\"}]},{\"prim\"\
+                    :\"PAIR\"},{\"prim\":\"PAIR\"},{\"prim\":\"FAILWITH\"}],[]]},{\"\
+                    prim\":\"DUP\",\"args\":[{\"int\":\"3\"}]},{\"prim\":\"CDR\"},{\"\
+                    prim\":\"SELF_ADDRESS\"},{\"prim\":\"PUSH\",\"args\":[{\"prim\"\
+                    :\"nat\"},{\"int\":\"1\"}]},{\"prim\":\"PAIR\"},{\"prim\":\"DUP\"\
+                    ,\"args\":[{\"int\":\"4\"}]},{\"prim\":\"CDR\"},{\"prim\":\"CAR\"\
+                    },{\"prim\":\"CDR\"},{\"prim\":\"DUP\",\"args\":[{\"int\":\"5\"\
+                    }]},{\"prim\":\"CDR\"},{\"prim\":\"CAR\"},{\"prim\":\"CAR\"},{\"\
+                    prim\":\"PAIR\"},{\"prim\":\"PAIR\"},{\"prim\":\"PAIR\"},{\"prim\"\
+                    :\"DIG\",\"args\":[{\"int\":\"5\"}]},{\"prim\":\"SWAP\"},{\"prim\"\
+                    :\"EXEC\"},{\"prim\":\"NIL\",\"args\":[{\"prim\":\"operation\"}]},{\"\
+                    prim\":\"SWAP\"},{\"prim\":\"CONS\"},{\"prim\":\"PUSH\",\"args\"\
+                    :[{\"prim\":\"mutez\"},{\"int\":\"0\"}]},{\"prim\":\"DUP\",\"args\"\
+                    :[{\"int\":\"3\"}]},{\"prim\":\"COMPARE\"},{\"prim\":\"NEQ\"},{\"\
+                    prim\":\"IF\",\"args\":[[{\"prim\":\"DUP\",\"args\":[{\"int\":\"\
+                    3\"}]},{\"prim\":\"CAR\"},{\"prim\":\"DIG\",\"args\":[{\"int\":\"\
+                    2\"}]},{\"prim\":\"SWAP\"},{\"prim\":\"CONTRACT\",\"args\":[{\"\
+                    prim\":\"unit\"}]},{\"prim\":\"IF_NONE\",\"args\":[[{\"prim\":\"\
+                    PUSH\",\"args\":[{\"prim\":\"string\"},{\"string\":\"ADDRESS_DOES_NOT_RESOLVE\"\
+                    }]},{\"prim\":\"FAILWITH\"}],[]]},{\"prim\":\"SWAP\"},{\"prim\"\
+                    :\"PUSH\",\"args\":[{\"prim\":\"unit\"},{\"prim\":\"Unit\"}]},{\"\
+                    prim\":\"TRANSFER_TOKENS\"},{\"prim\":\"CONS\"}],[{\"prim\":\"SWAP\"\
+                    },{\"prim\":\"DROP\"}]]},{\"prim\":\"PUSH\",\"args\":[{\"prim\"\
+                    :\"nat\"},{\"int\":\"1\"}]},{\"prim\":\"DUP\",\"args\":[{\"int\"\
+                    :\"3\"}]},{\"prim\":\"CDR\"},{\"prim\":\"GET\",\"args\":[{\"int\"\
+                    :\"4\"}]},{\"prim\":\"COMPARE\"},{\"prim\":\"LE\"},{\"prim\":\"\
+                    IF\",\"args\":[[{\"prim\":\"SWAP\"},{\"prim\":\"DROP\"},{\"prim\"\
+                    :\"DUP\",\"args\":[{\"int\":\"3\"}]},{\"prim\":\"GET\",\"args\"\
+                    :[{\"int\":\"3\"}]},{\"prim\":\"DIG\",\"args\":[{\"int\":\"2\"}]},{\"\
+                    prim\":\"CAR\"},{\"prim\":\"NONE\",\"args\":[{\"prim\":\"pair\"\
+                    ,\"args\":[{\"prim\":\"address\"},{\"prim\":\"pair\",\"args\":[{\"\
+                    prim\":\"pair\",\"args\":[{\"prim\":\"address\"},{\"prim\":\"nat\"\
+                    }]},{\"prim\":\"pair\",\"args\":[{\"prim\":\"mutez\"},{\"prim\"\
+                    :\"nat\"}]}]}]}]},{\"prim\":\"SWAP\"},{\"prim\":\"UPDATE\"}],[{\"\
+                    prim\":\"DUP\",\"args\":[{\"int\":\"4\"}]},{\"prim\":\"GET\",\"\
+                    args\":[{\"int\":\"3\"}]},{\"prim\":\"DIG\",\"args\":[{\"int\":\"\
+                    2\"}]},{\"prim\":\"DUP\"},{\"prim\":\"DUP\"},{\"prim\":\"DUG\",\"\
+                    args\":[{\"int\":\"4\"}]},{\"prim\":\"CDR\"},{\"prim\":\"PUSH\"\
+                    ,\"args\":[{\"prim\":\"nat\"},{\"int\":\"1\"}]},{\"prim\":\"DIG\"\
+                    ,\"args\":[{\"int\":\"5\"}]},{\"prim\":\"CDR\"},{\"prim\":\"GET\"\
+                    ,\"args\":[{\"int\":\"4\"}]},{\"prim\":\"SUB\"},{\"prim\":\"ABS\"\
+                    },{\"prim\":\"UPDATE\",\"args\":[{\"int\":\"4\"}]},{\"prim\":\"\
+                    UPDATE\",\"args\":[{\"int\":\"2\"}]},{\"prim\":\"SOME\"},{\"prim\"\
+                    :\"DIG\",\"args\":[{\"int\":\"3\"}]},{\"prim\":\"CAR\"},{\"prim\"\
+                    :\"UPDATE\"}]]},{\"prim\":\"DIG\",\"args\":[{\"int\":\"2\"}]},{\"\
+                    prim\":\"SWAP\"},{\"prim\":\"UPDATE\",\"args\":[{\"int\":\"3\"}]},{\"\
+                    prim\":\"SWAP\"},{\"prim\":\"PAIR\"}]]}],[{\"prim\":\"IF_LEFT\"\
+                    ,\"args\":[[{\"prim\":\"DIG\",\"args\":[{\"int\":\"5\"}]},{\"prim\"\
+                    :\"DROP\"},{\"prim\":\"SWAP\"},{\"prim\":\"DUP\"},{\"prim\":\"DUG\"\
+                    ,\"args\":[{\"int\":\"2\"}]},{\"prim\":\"CAR\"},{\"prim\":\"DIG\"\
+                    ,\"args\":[{\"int\":\"5\"}]},{\"prim\":\"SWAP\"},{\"prim\":\"EXEC\"\
+                    },{\"prim\":\"DROP\"},{\"prim\":\"PUSH\",\"args\":[{\"prim\":\"\
+                    mutez\"},{\"int\":\"0\"}]},{\"prim\":\"AMOUNT\"},{\"prim\":\"COMPARE\"\
+                    },{\"prim\":\"NEQ\"},{\"prim\":\"IF\",\"args\":[[{\"prim\":\"PUSH\"\
+                    ,\"args\":[{\"prim\":\"string\"},{\"string\":\"CANCEL\"}]},{\"prim\"\
+                    :\"DIG\",\"args\":[{\"int\":\"3\"}]},{\"prim\":\"SWAP\"},{\"prim\"\
+                    :\"EXEC\"},{\"prim\":\"FAILWITH\"}],[{\"prim\":\"DIG\",\"args\"\
+                    :[{\"int\":\"2\"}]},{\"prim\":\"DROP\"}]]},{\"prim\":\"SWAP\"},{\"\
+                    prim\":\"DUP\"},{\"prim\":\"DUG\",\"args\":[{\"int\":\"2\"}]},{\"\
+                    prim\":\"GET\",\"args\":[{\"int\":\"3\"}]},{\"prim\":\"SWAP\"},{\"\
+                    prim\":\"DUP\"},{\"prim\":\"DUG\",\"args\":[{\"int\":\"2\"}]},{\"\
+                    prim\":\"GET\"},{\"prim\":\"IF_NONE\",\"args\":[[{\"prim\":\"DROP\"\
+                    ,\"args\":[{\"int\":\"3\"}]},{\"prim\":\"PUSH\",\"args\":[{\"prim\"\
+                    :\"string\"},{\"string\":\"NO_SALE\"}]},{\"prim\":\"FAILWITH\"}],[{\"\
+                    prim\":\"DUP\"},{\"prim\":\"CAR\"},{\"prim\":\"DUP\"},{\"prim\"\
+                    :\"SENDER\"},{\"prim\":\"COMPARE\"},{\"prim\":\"EQ\"},{\"prim\"\
+                    :\"IF\",\"args\":[[{\"prim\":\"PUSH\",\"args\":[{\"prim\":\"unit\"\
+                    },{\"prim\":\"Unit\"}]}],[{\"prim\":\"PUSH\",\"args\":[{\"prim\"\
+                    :\"string\"},{\"string\":\"OR_A_SELLER\"}]},{\"prim\":\"DUP\",\"\
+                    args\":[{\"int\":\"5\"}]},{\"prim\":\"CAR\"},{\"prim\":\"IF_NONE\"\
+                    ,\"args\":[[{\"prim\":\"DROP\"},{\"prim\":\"UNIT\"}],[{\"prim\"\
+                    :\"CAR\"},{\"prim\":\"CAR\"},{\"prim\":\"SENDER\"},{\"prim\":\"\
+                    COMPARE\"},{\"prim\":\"NEQ\"},{\"prim\":\"IF\",\"args\":[[{\"prim\"\
+                    :\"PUSH\",\"args\":[{\"prim\":\"string\"},{\"string\":\"_\"}]},{\"\
+                    prim\":\"CONCAT\"},{\"prim\":\"PUSH\",\"args\":[{\"prim\":\"string\"\
+                    },{\"string\":\"NOT_AN_ADMIN\"}]},{\"prim\":\"CONCAT\"},{\"prim\"\
+                    :\"FAILWITH\"}],[{\"prim\":\"DROP\"},{\"prim\":\"UNIT\"}]]}]]}]]},{\"\
+                    prim\":\"DROP\"},{\"prim\":\"SELF_ADDRESS\"},{\"prim\":\"DUP\",\"\
+                    args\":[{\"int\":\"3\"}]},{\"prim\":\"CDR\"},{\"prim\":\"GET\",\"\
+                    args\":[{\"int\":\"4\"}]},{\"prim\":\"PAIR\"},{\"prim\":\"DUP\"\
+                    ,\"args\":[{\"int\":\"3\"}]},{\"prim\":\"CDR\"},{\"prim\":\"CAR\"\
+                    },{\"prim\":\"CDR\"},{\"prim\":\"DIG\",\"args\":[{\"int\":\"3\"\
+                    }]},{\"prim\":\"CDR\"},{\"prim\":\"CAR\"},{\"prim\":\"CAR\"},{\"\
+                    prim\":\"PAIR\"},{\"prim\":\"PAIR\"},{\"prim\":\"PAIR\"},{\"prim\"\
+                    :\"DIG\",\"args\":[{\"int\":\"3\"}]},{\"prim\":\"SWAP\"},{\"prim\"\
+                    :\"EXEC\"},{\"prim\":\"DIG\",\"args\":[{\"int\":\"2\"}]},{\"prim\"\
+                    :\"DUP\"},{\"prim\":\"GET\",\"args\":[{\"int\":\"3\"}]},{\"prim\"\
+                    :\"DIG\",\"args\":[{\"int\":\"3\"}]},{\"prim\":\"NONE\",\"args\"\
+                    :[{\"prim\":\"pair\",\"args\":[{\"prim\":\"address\"},{\"prim\"\
+                    :\"pair\",\"args\":[{\"prim\":\"pair\",\"args\":[{\"prim\":\"address\"\
+                    },{\"prim\":\"nat\"}]},{\"prim\":\"pair\",\"args\":[{\"prim\":\"\
+                    mutez\"},{\"prim\":\"nat\"}]}]}]}]},{\"prim\":\"SWAP\"},{\"prim\"\
+                    :\"UPDATE\"},{\"prim\":\"UPDATE\",\"args\":[{\"int\":\"3\"}]},{\"\
+                    prim\":\"NIL\",\"args\":[{\"prim\":\"operation\"}]},{\"prim\":\"\
+                    DIG\",\"args\":[{\"int\":\"2\"}]},{\"prim\":\"CONS\"},{\"prim\"\
+                    :\"PAIR\"}]]}],[{\"prim\":\"SWAP\"},{\"prim\":\"DUP\"},{\"prim\"\
+                    :\"DUG\",\"args\":[{\"int\":\"2\"}]},{\"prim\":\"CAR\"},{\"prim\"\
+                    :\"DIG\",\"args\":[{\"int\":\"5\"}]},{\"prim\":\"SWAP\"},{\"prim\"\
+                    :\"EXEC\"},{\"prim\":\"DROP\"},{\"prim\":\"SWAP\"},{\"prim\":\"\
+                    DUP\"},{\"prim\":\"DUG\",\"args\":[{\"int\":\"2\"}]},{\"prim\":\"\
+                    CAR\"},{\"prim\":\"DIG\",\"args\":[{\"int\":\"5\"}]},{\"prim\":\"\
+                    SWAP\"},{\"prim\":\"EXEC\"},{\"prim\":\"DROP\"},{\"prim\":\"PUSH\"\
+                    ,\"args\":[{\"prim\":\"mutez\"},{\"int\":\"0\"}]},{\"prim\":\"AMOUNT\"\
+                    },{\"prim\":\"COMPARE\"},{\"prim\":\"NEQ\"},{\"prim\":\"IF\",\"\
+                    args\":[[{\"prim\":\"PUSH\",\"args\":[{\"prim\":\"string\"},{\"\
+                    string\":\"SELL\"}]},{\"prim\":\"DIG\",\"args\":[{\"int\":\"3\"\
+                    }]},{\"prim\":\"SWAP\"},{\"prim\":\"EXEC\"},{\"prim\":\"FAILWITH\"\
+                    }],[{\"prim\":\"DIG\",\"args\":[{\"int\":\"2\"}]},{\"prim\":\"DROP\"\
+                    }]]},{\"prim\":\"SELF_ADDRESS\"},{\"prim\":\"SENDER\"},{\"prim\"\
+                    :\"DUP\",\"args\":[{\"int\":\"3\"}]},{\"prim\":\"GET\",\"args\"\
+                    :[{\"int\":\"4\"}]},{\"prim\":\"PAIR\"},{\"prim\":\"DUP\",\"args\"\
+                    :[{\"int\":\"3\"}]},{\"prim\":\"CAR\"},{\"prim\":\"CDR\"},{\"prim\"\
+                    :\"DUP\",\"args\":[{\"int\":\"4\"}]},{\"prim\":\"CAR\"},{\"prim\"\
+                    :\"CAR\"},{\"prim\":\"PAIR\"},{\"prim\":\"PAIR\"},{\"prim\":\"PAIR\"\
+                    },{\"prim\":\"DIG\",\"args\":[{\"int\":\"3\"}]},{\"prim\":\"SWAP\"\
+                    },{\"prim\":\"EXEC\"},{\"prim\":\"SENDER\"},{\"prim\":\"DIG\",\"\
+                    args\":[{\"int\":\"2\"}]},{\"prim\":\"SWAP\"},{\"prim\":\"PAIR\"\
+                    },{\"prim\":\"DUP\",\"args\":[{\"int\":\"3\"}]},{\"prim\":\"GET\"\
+                    ,\"args\":[{\"int\":\"4\"}]},{\"prim\":\"DIG\",\"args\":[{\"int\"\
+                    :\"3\"}]},{\"prim\":\"DUP\"},{\"prim\":\"GET\",\"args\":[{\"int\"\
+                    :\"3\"}]},{\"prim\":\"DIG\",\"args\":[{\"int\":\"3\"}]},{\"prim\"\
+                    :\"DUP\",\"args\":[{\"int\":\"4\"}]},{\"prim\":\"SWAP\"},{\"prim\"\
+                    :\"SOME\"},{\"prim\":\"SWAP\"},{\"prim\":\"UPDATE\"},{\"prim\":\"\
+                    UPDATE\",\"args\":[{\"int\":\"3\"}]},{\"prim\":\"PUSH\",\"args\"\
+                    :[{\"prim\":\"nat\"},{\"int\":\"1\"}]},{\"prim\":\"DIG\",\"args\"\
+                    :[{\"int\":\"2\"}]},{\"prim\":\"ADD\"},{\"prim\":\"UPDATE\",\"args\"\
+                    :[{\"int\":\"4\"}]},{\"prim\":\"NIL\",\"args\":[{\"prim\":\"operation\"\
+                    }]},{\"prim\":\"DIG\",\"args\":[{\"int\":\"2\"}]},{\"prim\":\"CONS\"\
+                    },{\"prim\":\"PAIR\"}]]}]]}]]}]},{\"kind\":\"temporary\",\"id\"\
+                    :\"proto.009-PsFLoren.michelson_v1.script_rejected\",\"location\"\
+                    :372,\"with\":{\"prim\":\"Pair\",\"args\":[{\"prim\":\"Pair\",\"\
+                    args\":[{\"string\":\"WRONG_TEZ_PRICE\"},{\"int\":\"4000000\"}]},{\"\
+                    int\":\"1000000\"}]}}]}}}],\"signature\":\"edsigtkpiSSschcaCt9pUVrpNPf7TTcgvgDEDD6NCEHMy8NNQJCGnMfLZzYoQj74yLjo9wx6MPVV29CvVzgi7qEcEUok3k7AuMg\"\
+                    }\n"
+                  x-content-type: application/json
+                examples:
+                  "0":
+                    value: "{\"contents\":[{\"kind\":\"transaction\",\"source\":\"tz1VJEC3vN7AcQEF8sDDDBrPzYsqEQro1tF6\"\
+                      ,\"fee\":\"100000\",\"counter\":\"431715\",\"gas_limit\":\"400000\"\
+                      ,\"storage_limit\":\"257\",\"amount\":\"1000000\",\"destination\"\
+                      :\"KT19cbBB2rPDAdvWLGr4MBroLYSQUgiDufmG\",\"parameters\":{\"entrypoint\"\
+                      :\"buy\",\"value\":{\"prim\":\"Pair\",\"args\":[{\"int\":\"3\"\
+                      },{\"string\":\"tz1TDTYSSw8FVYWZjqjhGoQo2SeZjy3EYL3c\"}]}},\"\
+                      metadata\":{\"balance_updates\":[{\"kind\":\"contract\",\"contract\"\
+                      :\"tz1VJEC3vN7AcQEF8sDDDBrPzYsqEQro1tF6\",\"change\":\"-100000\"\
+                      ,\"origin\":\"block\"},{\"kind\":\"freezer\",\"category\":\"fees\"\
+                      ,\"delegate\":\"tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU\",\"cycle\"\
+                      :271,\"change\":\"100000\",\"origin\":\"block\"}],\"operation_result\"\
+                      :{\"status\":\"failed\",\"errors\":[{\"kind\":\"temporary\",\"\
+                      id\":\"proto.009-PsFLoren.michelson_v1.runtime_error\",\"contract_handle\"\
+                      :\"KT19cbBB2rPDAdvWLGr4MBroLYSQUgiDufmG\",\"contract_code\":[{\"\
+                      prim\":\"parameter\",\"args\":[{\"prim\":\"or\",\"args\":[{\"\
+                      prim\":\"or\",\"args\":[{\"prim\":\"or\",\"args\":[{\"prim\":\"\
+                      or\",\"args\":[{\"prim\":\"unit\",\"annots\":[\"%confirm_admin\"\
+                      ]},{\"prim\":\"bool\",\"annots\":[\"%pause\"]}]},{\"prim\":\"\
+                      address\",\"annots\":[\"%set_admin\"]}],\"annots\":[\"%admin\"\
+                      ]},{\"prim\":\"pair\",\"args\":[{\"prim\":\"nat\",\"annots\":[\"\
+                      %sale_id\"]},{\"prim\":\"address\",\"annots\":[\"%buyer\"]}],\"\
+                      annots\":[\"%buy\"]}]},{\"prim\":\"or\",\"args\":[{\"prim\":\"\
+                      nat\",\"annots\":[\"%cancel\"]},{\"prim\":\"pair\",\"args\":[{\"\
+                      prim\":\"pair\",\"args\":[{\"prim\":\"address\",\"annots\":[\"\
+                      %fa2_address\"]},{\"prim\":\"nat\",\"annots\":[\"%token_id\"]}],\"\
+                      annots\":[\"%sale_token\"]},{\"prim\":\"pair\",\"args\":[{\"prim\"\
+                      :\"mutez\",\"annots\":[\"%price\"]},{\"prim\":\"nat\",\"annots\"\
+                      :[\"%amount\"]}]}],\"annots\":[\"%sell\"]}]}]}]},{\"prim\":\"\
+                      storage\",\"args\":[{\"prim\":\"pair\",\"args\":[{\"prim\":\"\
+                      option\",\"args\":[{\"prim\":\"pair\",\"args\":[{\"prim\":\"pair\"\
+                      ,\"args\":[{\"prim\":\"address\",\"annots\":[\"%admin\"]},{\"\
+                      prim\":\"bool\",\"annots\":[\"%paused\"]}]},{\"prim\":\"option\"\
+                      ,\"args\":[{\"prim\":\"address\"}],\"annots\":[\"%pending_admin\"\
+                      ]}]}],\"annots\":[\"%admin\"]},{\"prim\":\"pair\",\"args\":[{\"\
+                      prim\":\"big_map\",\"args\":[{\"prim\":\"nat\"},{\"prim\":\"pair\"\
+                      ,\"args\":[{\"prim\":\"address\",\"annots\":[\"%seller\"]},{\"\
+                      prim\":\"pair\",\"args\":[{\"prim\":\"pair\",\"args\":[{\"prim\"\
+                      :\"address\",\"annots\":[\"%fa2_address\"]},{\"prim\":\"nat\"\
+                      ,\"annots\":[\"%token_id\"]}],\"annots\":[\"%sale_token\"]},{\"\
+                      prim\":\"pair\",\"args\":[{\"prim\":\"mutez\",\"annots\":[\"%price\"\
+                      ]},{\"prim\":\"nat\",\"annots\":[\"%amount\"]}]}],\"annots\":[\"\
+                      %sale_data\"]}]}],\"annots\":[\"%sales\"]},{\"prim\":\"nat\",\"\
+                      annots\":[\"%next_sale_id\"]}]}]}]},{\"prim\":\"code\",\"args\"\
+                      :[[{\"prim\":\"LAMBDA\",\"args\":[{\"prim\":\"option\",\"args\"\
+                      :[{\"prim\":\"pair\",\"args\":[{\"prim\":\"pair\",\"args\":[{\"\
+                      prim\":\"address\"},{\"prim\":\"bool\"}]},{\"prim\":\"option\"\
+                      ,\"args\":[{\"prim\":\"address\"}]}]}]},{\"prim\":\"unit\"},[{\"\
+                      prim\":\"IF_NONE\",\"args\":[[{\"prim\":\"UNIT\"}],[{\"prim\"\
+                      :\"CAR\"},{\"prim\":\"CAR\"},{\"prim\":\"SENDER\"},{\"prim\":\"\
+                      COMPARE\"},{\"prim\":\"NEQ\"},{\"prim\":\"IF\",\"args\":[[{\"\
+                      prim\":\"PUSH\",\"args\":[{\"prim\":\"string\"},{\"string\":\"\
+                      NOT_AN_ADMIN\"}]},{\"prim\":\"FAILWITH\"}],[{\"prim\":\"UNIT\"\
+                      }]]}]]}]]},{\"prim\":\"LAMBDA\",\"args\":[{\"prim\":\"option\"\
+                      ,\"args\":[{\"prim\":\"pair\",\"args\":[{\"prim\":\"pair\",\"\
+                      args\":[{\"prim\":\"address\"},{\"prim\":\"bool\"}]},{\"prim\"\
+                      :\"option\",\"args\":[{\"prim\":\"address\"}]}]}]},{\"prim\":\"\
+                      unit\"},[{\"prim\":\"IF_NONE\",\"args\":[[{\"prim\":\"UNIT\"}],[{\"\
+                      prim\":\"CAR\"},{\"prim\":\"CDR\"},{\"prim\":\"IF\",\"args\":[[{\"\
+                      prim\":\"PUSH\",\"args\":[{\"prim\":\"string\"},{\"string\":\"\
+                      PAUSED\"}]},{\"prim\":\"FAILWITH\"}],[{\"prim\":\"UNIT\"}]]}]]}]]},{\"\
+                      prim\":\"LAMBDA\",\"args\":[{\"prim\":\"pair\",\"args\":[{\"prim\"\
+                      :\"pair\",\"args\":[{\"prim\":\"pair\",\"args\":[{\"prim\":\"\
+                      address\"},{\"prim\":\"nat\"}]},{\"prim\":\"pair\",\"args\":[{\"\
+                      prim\":\"nat\"},{\"prim\":\"address\"}]}]},{\"prim\":\"address\"\
+                      }]},{\"prim\":\"operation\"},[{\"prim\":\"UNPAIR\"},{\"prim\"\
+                      :\"UNPAIR\"},{\"prim\":\"UNPAIR\"},{\"prim\":\"DIG\",\"args\"\
+                      :[{\"int\":\"2\"}]},{\"prim\":\"UNPAIR\"},{\"prim\":\"DIG\",\"\
+                      args\":[{\"int\":\"2\"}]},{\"prim\":\"CONTRACT\",\"args\":[{\"\
+                      prim\":\"list\",\"args\":[{\"prim\":\"pair\",\"args\":[{\"prim\"\
+                      :\"address\",\"annots\":[\"%from_\"]},{\"prim\":\"list\",\"args\"\
+                      :[{\"prim\":\"pair\",\"args\":[{\"prim\":\"address\",\"annots\"\
+                      :[\"%to_\"]},{\"prim\":\"pair\",\"args\":[{\"prim\":\"nat\",\"\
+                      annots\":[\"%token_id\"]},{\"prim\":\"nat\",\"annots\":[\"%amount\"\
+                      ]}]}]}],\"annots\":[\"%txs\"]}]}]}],\"annots\":[\"%transfer\"\
+                      ]},{\"prim\":\"IF_NONE\",\"args\":[[{\"prim\":\"DROP\",\"args\"\
+                      :[{\"int\":\"4\"}]},{\"prim\":\"PUSH\",\"args\":[{\"prim\":\"\
+                      string\"},{\"string\":\"CANNOT_INVOKE_FA2_TRANSFER\"}]},{\"prim\"\
+                      :\"FAILWITH\"}],[{\"prim\":\"PUSH\",\"args\":[{\"prim\":\"mutez\"\
+                      },{\"int\":\"0\"}]},{\"prim\":\"NIL\",\"args\":[{\"prim\":\"pair\"\
+                      ,\"args\":[{\"prim\":\"address\"},{\"prim\":\"list\",\"args\"\
+                      :[{\"prim\":\"pair\",\"args\":[{\"prim\":\"address\"},{\"prim\"\
+                      :\"pair\",\"args\":[{\"prim\":\"nat\"},{\"prim\":\"nat\"}]}]}]}]}]},{\"\
+                      prim\":\"DIG\",\"args\":[{\"int\":\"4\"}]},{\"prim\":\"NIL\",\"\
+                      args\":[{\"prim\":\"pair\",\"args\":[{\"prim\":\"address\"},{\"\
+                      prim\":\"pair\",\"args\":[{\"prim\":\"nat\"},{\"prim\":\"nat\"\
+                      }]}]}]},{\"prim\":\"DIG\",\"args\":[{\"int\":\"7\"}]},{\"prim\"\
+                      :\"DIG\",\"args\":[{\"int\":\"7\"}]},{\"prim\":\"DIG\",\"args\"\
+                      :[{\"int\":\"7\"}]},{\"prim\":\"SWAP\"},{\"prim\":\"PAIR\"},{\"\
+                      prim\":\"SWAP\"},{\"prim\":\"PAIR\"},{\"prim\":\"CONS\"},{\"prim\"\
+                      :\"SWAP\"},{\"prim\":\"PAIR\"},{\"prim\":\"CONS\"},{\"prim\":\"\
+                      TRANSFER_TOKENS\"}]]}]]},{\"prim\":\"LAMBDA\",\"args\":[{\"prim\"\
+                      :\"string\"},{\"prim\":\"string\"},[{\"prim\":\"PUSH\",\"args\"\
+                      :[{\"prim\":\"string\"},{\"string\":\")\"}]},{\"prim\":\"SWAP\"\
+                      },{\"prim\":\"CONCAT\"},{\"prim\":\"PUSH\",\"args\":[{\"prim\"\
+                      :\"string\"},{\"string\":\"DON'T TRANSFER TEZ TO THIS ENTRYPOINT\
+                      \ (\"}]},{\"prim\":\"CONCAT\"}]]},{\"prim\":\"DIG\",\"args\":[{\"\
+                      int\":\"4\"}]},{\"prim\":\"UNPAIR\"},{\"prim\":\"IF_LEFT\",\"\
+                      args\":[[{\"prim\":\"DIG\",\"args\":[{\"int\":\"2\"}]},{\"prim\"\
+                      :\"DROP\"},{\"prim\":\"IF_LEFT\",\"args\":[[{\"prim\":\"DIG\"\
+                      ,\"args\":[{\"int\":\"2\"}]},{\"prim\":\"DROP\"},{\"prim\":\"\
+                      DIG\",\"args\":[{\"int\":\"2\"}]},{\"prim\":\"DROP\"},{\"prim\"\
+                      :\"SWAP\"},{\"prim\":\"DUP\"},{\"prim\":\"DUG\",\"args\":[{\"\
+                      int\":\"2\"}]},{\"prim\":\"CAR\"},{\"prim\":\"SWAP\"},{\"prim\"\
+                      :\"IF_LEFT\",\"args\":[[{\"prim\":\"IF_LEFT\",\"args\":[[{\"prim\"\
+                      :\"DROP\"},{\"prim\":\"DIG\",\"args\":[{\"int\":\"2\"}]},{\"prim\"\
+                      :\"DROP\"},{\"prim\":\"IF_NONE\",\"args\":[[{\"prim\":\"PUSH\"\
+                      ,\"args\":[{\"prim\":\"string\"},{\"string\":\"NO_ADMIN_CAPABILITIES_CONFIGURED\"\
+                      }]},{\"prim\":\"FAILWITH\"}],[{\"prim\":\"DUP\"},{\"prim\":\"\
+                      CDR\"},{\"prim\":\"IF_NONE\",\"args\":[[{\"prim\":\"DROP\"},{\"\
+                      prim\":\"PUSH\",\"args\":[{\"prim\":\"string\"},{\"string\":\"\
+                      NO_PENDING_ADMIN\"}]},{\"prim\":\"FAILWITH\"}],[{\"prim\":\"SENDER\"\
+                      },{\"prim\":\"COMPARE\"},{\"prim\":\"EQ\"},{\"prim\":\"IF\",\"\
+                      args\":[[{\"prim\":\"NONE\",\"args\":[{\"prim\":\"address\"}]},{\"\
+                      prim\":\"SWAP\"},{\"prim\":\"CAR\"},{\"prim\":\"CDR\"},{\"prim\"\
+                      :\"SENDER\"},{\"prim\":\"PAIR\"},{\"prim\":\"PAIR\"},{\"prim\"\
+                      :\"SOME\"}],[{\"prim\":\"DROP\"},{\"prim\":\"PUSH\",\"args\":[{\"\
+                      prim\":\"string\"},{\"string\":\"NOT_A_PENDING_ADMIN\"}]},{\"\
+                      prim\":\"FAILWITH\"}]]}]]}]]},{\"prim\":\"NIL\",\"args\":[{\"\
+                      prim\":\"operation\"}]},{\"prim\":\"PAIR\"}],[{\"prim\":\"SWAP\"\
+                      },{\"prim\":\"DUP\"},{\"prim\":\"DUG\",\"args\":[{\"int\":\"2\"\
+                      }]},{\"prim\":\"DIG\",\"args\":[{\"int\":\"4\"}]},{\"prim\":\"\
+                      SWAP\"},{\"prim\":\"EXEC\"},{\"prim\":\"DROP\"},{\"prim\":\"SWAP\"\
+                      },{\"prim\":\"IF_NONE\",\"args\":[[{\"prim\":\"DROP\"},{\"prim\"\
+                      :\"PUSH\",\"args\":[{\"prim\":\"string\"},{\"string\":\"NO_ADMIN_CAPABILITIES_CONFIGURED\"\
+                      }]},{\"prim\":\"FAILWITH\"}],[{\"prim\":\"DUP\"},{\"prim\":\"\
+                      CDR\"},{\"prim\":\"DUG\",\"args\":[{\"int\":\"2\"}]},{\"prim\"\
+                      :\"CAR\"},{\"prim\":\"CAR\"},{\"prim\":\"PAIR\"},{\"prim\":\"\
+                      PAIR\"},{\"prim\":\"SOME\"}]]},{\"prim\":\"NIL\",\"args\":[{\"\
+                      prim\":\"operation\"}]},{\"prim\":\"PAIR\"}]]}],[{\"prim\":\"\
+                      SWAP\"},{\"prim\":\"DUP\"},{\"prim\":\"DUG\",\"args\":[{\"int\"\
+                      :\"2\"}]},{\"prim\":\"DIG\",\"args\":[{\"int\":\"4\"}]},{\"prim\"\
+                      :\"SWAP\"},{\"prim\":\"EXEC\"},{\"prim\":\"DROP\"},{\"prim\":\"\
+                      SWAP\"},{\"prim\":\"IF_NONE\",\"args\":[[{\"prim\":\"DROP\"},{\"\
+                      prim\":\"PUSH\",\"args\":[{\"prim\":\"string\"},{\"string\":\"\
+                      NO_ADMIN_CAPABILITIES_CONFIGURED\"}]},{\"prim\":\"FAILWITH\"}],[{\"\
+                      prim\":\"SWAP\"},{\"prim\":\"SOME\"},{\"prim\":\"SWAP\"},{\"prim\"\
+                      :\"CAR\"},{\"prim\":\"PAIR\"},{\"prim\":\"SOME\"}]]},{\"prim\"\
+                      :\"NIL\",\"args\":[{\"prim\":\"operation\"}]},{\"prim\":\"PAIR\"\
+                      }]]},{\"prim\":\"UNPAIR\"},{\"prim\":\"DUG\",\"args\":[{\"int\"\
+                      :\"2\"}]},{\"prim\":\"UPDATE\",\"args\":[{\"int\":\"1\"}]},{\"\
+                      prim\":\"SWAP\"},{\"prim\":\"PAIR\"}],[{\"prim\":\"DIG\",\"args\"\
+                      :[{\"int\":\"4\"}]},{\"prim\":\"DROP\"},{\"prim\":\"SWAP\"},{\"\
+                      prim\":\"DUP\"},{\"prim\":\"DUG\",\"args\":[{\"int\":\"2\"}]},{\"\
+                      prim\":\"CAR\"},{\"prim\":\"DIG\",\"args\":[{\"int\":\"4\"}]},{\"\
+                      prim\":\"SWAP\"},{\"prim\":\"EXEC\"},{\"prim\":\"DROP\"},{\"prim\"\
+                      :\"SWAP\"},{\"prim\":\"DUP\"},{\"prim\":\"DUG\",\"args\":[{\"\
+                      int\":\"2\"}]},{\"prim\":\"GET\",\"args\":[{\"int\":\"3\"}]},{\"\
+                      prim\":\"SWAP\"},{\"prim\":\"DUP\"},{\"prim\":\"DUG\",\"args\"\
+                      :[{\"int\":\"2\"}]},{\"prim\":\"CAR\"},{\"prim\":\"GET\"},{\"\
+                      prim\":\"IF_NONE\",\"args\":[[{\"prim\":\"PUSH\",\"args\":[{\"\
+                      prim\":\"string\"},{\"string\":\"NO_SALE\"}]},{\"prim\":\"FAILWITH\"\
+                      }],[]]},{\"prim\":\"DUP\"},{\"prim\":\"CDR\"},{\"prim\":\"GET\"\
+                      ,\"args\":[{\"int\":\"3\"}]},{\"prim\":\"DUP\"},{\"prim\":\"AMOUNT\"\
+                      },{\"prim\":\"COMPARE\"},{\"prim\":\"NEQ\"},{\"prim\":\"IF\",\"\
+                      args\":[[{\"prim\":\"AMOUNT\"},{\"prim\":\"SWAP\"},{\"prim\":\"\
+                      DUP\"},{\"prim\":\"DUG\",\"args\":[{\"int\":\"2\"}]},{\"prim\"\
+                      :\"PUSH\",\"args\":[{\"prim\":\"string\"},{\"string\":\"WRONG_TEZ_PRICE\"\
+                      }]},{\"prim\":\"PAIR\"},{\"prim\":\"PAIR\"},{\"prim\":\"FAILWITH\"\
+                      }],[]]},{\"prim\":\"DUP\",\"args\":[{\"int\":\"3\"}]},{\"prim\"\
+                      :\"CDR\"},{\"prim\":\"SELF_ADDRESS\"},{\"prim\":\"PUSH\",\"args\"\
+                      :[{\"prim\":\"nat\"},{\"int\":\"1\"}]},{\"prim\":\"PAIR\"},{\"\
+                      prim\":\"DUP\",\"args\":[{\"int\":\"4\"}]},{\"prim\":\"CDR\"},{\"\
+                      prim\":\"CAR\"},{\"prim\":\"CDR\"},{\"prim\":\"DUP\",\"args\"\
+                      :[{\"int\":\"5\"}]},{\"prim\":\"CDR\"},{\"prim\":\"CAR\"},{\"\
+                      prim\":\"CAR\"},{\"prim\":\"PAIR\"},{\"prim\":\"PAIR\"},{\"prim\"\
+                      :\"PAIR\"},{\"prim\":\"DIG\",\"args\":[{\"int\":\"5\"}]},{\"prim\"\
+                      :\"SWAP\"},{\"prim\":\"EXEC\"},{\"prim\":\"NIL\",\"args\":[{\"\
+                      prim\":\"operation\"}]},{\"prim\":\"SWAP\"},{\"prim\":\"CONS\"\
+                      },{\"prim\":\"PUSH\",\"args\":[{\"prim\":\"mutez\"},{\"int\":\"\
+                      0\"}]},{\"prim\":\"DUP\",\"args\":[{\"int\":\"3\"}]},{\"prim\"\
+                      :\"COMPARE\"},{\"prim\":\"NEQ\"},{\"prim\":\"IF\",\"args\":[[{\"\
+                      prim\":\"DUP\",\"args\":[{\"int\":\"3\"}]},{\"prim\":\"CAR\"},{\"\
+                      prim\":\"DIG\",\"args\":[{\"int\":\"2\"}]},{\"prim\":\"SWAP\"\
+                      },{\"prim\":\"CONTRACT\",\"args\":[{\"prim\":\"unit\"}]},{\"prim\"\
+                      :\"IF_NONE\",\"args\":[[{\"prim\":\"PUSH\",\"args\":[{\"prim\"\
+                      :\"string\"},{\"string\":\"ADDRESS_DOES_NOT_RESOLVE\"}]},{\"prim\"\
+                      :\"FAILWITH\"}],[]]},{\"prim\":\"SWAP\"},{\"prim\":\"PUSH\",\"\
+                      args\":[{\"prim\":\"unit\"},{\"prim\":\"Unit\"}]},{\"prim\":\"\
+                      TRANSFER_TOKENS\"},{\"prim\":\"CONS\"}],[{\"prim\":\"SWAP\"},{\"\
+                      prim\":\"DROP\"}]]},{\"prim\":\"PUSH\",\"args\":[{\"prim\":\"\
+                      nat\"},{\"int\":\"1\"}]},{\"prim\":\"DUP\",\"args\":[{\"int\"\
+                      :\"3\"}]},{\"prim\":\"CDR\"},{\"prim\":\"GET\",\"args\":[{\"int\"\
+                      :\"4\"}]},{\"prim\":\"COMPARE\"},{\"prim\":\"LE\"},{\"prim\":\"\
+                      IF\",\"args\":[[{\"prim\":\"SWAP\"},{\"prim\":\"DROP\"},{\"prim\"\
+                      :\"DUP\",\"args\":[{\"int\":\"3\"}]},{\"prim\":\"GET\",\"args\"\
+                      :[{\"int\":\"3\"}]},{\"prim\":\"DIG\",\"args\":[{\"int\":\"2\"\
+                      }]},{\"prim\":\"CAR\"},{\"prim\":\"NONE\",\"args\":[{\"prim\"\
+                      :\"pair\",\"args\":[{\"prim\":\"address\"},{\"prim\":\"pair\"\
+                      ,\"args\":[{\"prim\":\"pair\",\"args\":[{\"prim\":\"address\"\
+                      },{\"prim\":\"nat\"}]},{\"prim\":\"pair\",\"args\":[{\"prim\"\
+                      :\"mutez\"},{\"prim\":\"nat\"}]}]}]}]},{\"prim\":\"SWAP\"},{\"\
+                      prim\":\"UPDATE\"}],[{\"prim\":\"DUP\",\"args\":[{\"int\":\"4\"\
+                      }]},{\"prim\":\"GET\",\"args\":[{\"int\":\"3\"}]},{\"prim\":\"\
+                      DIG\",\"args\":[{\"int\":\"2\"}]},{\"prim\":\"DUP\"},{\"prim\"\
+                      :\"DUP\"},{\"prim\":\"DUG\",\"args\":[{\"int\":\"4\"}]},{\"prim\"\
+                      :\"CDR\"},{\"prim\":\"PUSH\",\"args\":[{\"prim\":\"nat\"},{\"\
+                      int\":\"1\"}]},{\"prim\":\"DIG\",\"args\":[{\"int\":\"5\"}]},{\"\
+                      prim\":\"CDR\"},{\"prim\":\"GET\",\"args\":[{\"int\":\"4\"}]},{\"\
+                      prim\":\"SUB\"},{\"prim\":\"ABS\"},{\"prim\":\"UPDATE\",\"args\"\
+                      :[{\"int\":\"4\"}]},{\"prim\":\"UPDATE\",\"args\":[{\"int\":\"\
+                      2\"}]},{\"prim\":\"SOME\"},{\"prim\":\"DIG\",\"args\":[{\"int\"\
+                      :\"3\"}]},{\"prim\":\"CAR\"},{\"prim\":\"UPDATE\"}]]},{\"prim\"\
+                      :\"DIG\",\"args\":[{\"int\":\"2\"}]},{\"prim\":\"SWAP\"},{\"prim\"\
+                      :\"UPDATE\",\"args\":[{\"int\":\"3\"}]},{\"prim\":\"SWAP\"},{\"\
+                      prim\":\"PAIR\"}]]}],[{\"prim\":\"IF_LEFT\",\"args\":[[{\"prim\"\
+                      :\"DIG\",\"args\":[{\"int\":\"5\"}]},{\"prim\":\"DROP\"},{\"prim\"\
+                      :\"SWAP\"},{\"prim\":\"DUP\"},{\"prim\":\"DUG\",\"args\":[{\"\
+                      int\":\"2\"}]},{\"prim\":\"CAR\"},{\"prim\":\"DIG\",\"args\":[{\"\
+                      int\":\"5\"}]},{\"prim\":\"SWAP\"},{\"prim\":\"EXEC\"},{\"prim\"\
+                      :\"DROP\"},{\"prim\":\"PUSH\",\"args\":[{\"prim\":\"mutez\"},{\"\
+                      int\":\"0\"}]},{\"prim\":\"AMOUNT\"},{\"prim\":\"COMPARE\"},{\"\
+                      prim\":\"NEQ\"},{\"prim\":\"IF\",\"args\":[[{\"prim\":\"PUSH\"\
+                      ,\"args\":[{\"prim\":\"string\"},{\"string\":\"CANCEL\"}]},{\"\
+                      prim\":\"DIG\",\"args\":[{\"int\":\"3\"}]},{\"prim\":\"SWAP\"\
+                      },{\"prim\":\"EXEC\"},{\"prim\":\"FAILWITH\"}],[{\"prim\":\"DIG\"\
+                      ,\"args\":[{\"int\":\"2\"}]},{\"prim\":\"DROP\"}]]},{\"prim\"\
+                      :\"SWAP\"},{\"prim\":\"DUP\"},{\"prim\":\"DUG\",\"args\":[{\"\
+                      int\":\"2\"}]},{\"prim\":\"GET\",\"args\":[{\"int\":\"3\"}]},{\"\
+                      prim\":\"SWAP\"},{\"prim\":\"DUP\"},{\"prim\":\"DUG\",\"args\"\
+                      :[{\"int\":\"2\"}]},{\"prim\":\"GET\"},{\"prim\":\"IF_NONE\",\"\
+                      args\":[[{\"prim\":\"DROP\",\"args\":[{\"int\":\"3\"}]},{\"prim\"\
+                      :\"PUSH\",\"args\":[{\"prim\":\"string\"},{\"string\":\"NO_SALE\"\
+                      }]},{\"prim\":\"FAILWITH\"}],[{\"prim\":\"DUP\"},{\"prim\":\"\
+                      CAR\"},{\"prim\":\"DUP\"},{\"prim\":\"SENDER\"},{\"prim\":\"COMPARE\"\
+                      },{\"prim\":\"EQ\"},{\"prim\":\"IF\",\"args\":[[{\"prim\":\"PUSH\"\
+                      ,\"args\":[{\"prim\":\"unit\"},{\"prim\":\"Unit\"}]}],[{\"prim\"\
+                      :\"PUSH\",\"args\":[{\"prim\":\"string\"},{\"string\":\"OR_A_SELLER\"\
+                      }]},{\"prim\":\"DUP\",\"args\":[{\"int\":\"5\"}]},{\"prim\":\"\
+                      CAR\"},{\"prim\":\"IF_NONE\",\"args\":[[{\"prim\":\"DROP\"},{\"\
+                      prim\":\"UNIT\"}],[{\"prim\":\"CAR\"},{\"prim\":\"CAR\"},{\"prim\"\
+                      :\"SENDER\"},{\"prim\":\"COMPARE\"},{\"prim\":\"NEQ\"},{\"prim\"\
+                      :\"IF\",\"args\":[[{\"prim\":\"PUSH\",\"args\":[{\"prim\":\"string\"\
+                      },{\"string\":\"_\"}]},{\"prim\":\"CONCAT\"},{\"prim\":\"PUSH\"\
+                      ,\"args\":[{\"prim\":\"string\"},{\"string\":\"NOT_AN_ADMIN\"\
+                      }]},{\"prim\":\"CONCAT\"},{\"prim\":\"FAILWITH\"}],[{\"prim\"\
+                      :\"DROP\"},{\"prim\":\"UNIT\"}]]}]]}]]},{\"prim\":\"DROP\"},{\"\
+                      prim\":\"SELF_ADDRESS\"},{\"prim\":\"DUP\",\"args\":[{\"int\"\
+                      :\"3\"}]},{\"prim\":\"CDR\"},{\"prim\":\"GET\",\"args\":[{\"int\"\
+                      :\"4\"}]},{\"prim\":\"PAIR\"},{\"prim\":\"DUP\",\"args\":[{\"\
+                      int\":\"3\"}]},{\"prim\":\"CDR\"},{\"prim\":\"CAR\"},{\"prim\"\
+                      :\"CDR\"},{\"prim\":\"DIG\",\"args\":[{\"int\":\"3\"}]},{\"prim\"\
+                      :\"CDR\"},{\"prim\":\"CAR\"},{\"prim\":\"CAR\"},{\"prim\":\"PAIR\"\
+                      },{\"prim\":\"PAIR\"},{\"prim\":\"PAIR\"},{\"prim\":\"DIG\",\"\
+                      args\":[{\"int\":\"3\"}]},{\"prim\":\"SWAP\"},{\"prim\":\"EXEC\"\
+                      },{\"prim\":\"DIG\",\"args\":[{\"int\":\"2\"}]},{\"prim\":\"DUP\"\
+                      },{\"prim\":\"GET\",\"args\":[{\"int\":\"3\"}]},{\"prim\":\"DIG\"\
+                      ,\"args\":[{\"int\":\"3\"}]},{\"prim\":\"NONE\",\"args\":[{\"\
+                      prim\":\"pair\",\"args\":[{\"prim\":\"address\"},{\"prim\":\"\
+                      pair\",\"args\":[{\"prim\":\"pair\",\"args\":[{\"prim\":\"address\"\
+                      },{\"prim\":\"nat\"}]},{\"prim\":\"pair\",\"args\":[{\"prim\"\
+                      :\"mutez\"},{\"prim\":\"nat\"}]}]}]}]},{\"prim\":\"SWAP\"},{\"\
+                      prim\":\"UPDATE\"},{\"prim\":\"UPDATE\",\"args\":[{\"int\":\"\
+                      3\"}]},{\"prim\":\"NIL\",\"args\":[{\"prim\":\"operation\"}]},{\"\
+                      prim\":\"DIG\",\"args\":[{\"int\":\"2\"}]},{\"prim\":\"CONS\"\
+                      },{\"prim\":\"PAIR\"}]]}],[{\"prim\":\"SWAP\"},{\"prim\":\"DUP\"\
+                      },{\"prim\":\"DUG\",\"args\":[{\"int\":\"2\"}]},{\"prim\":\"CAR\"\
+                      },{\"prim\":\"DIG\",\"args\":[{\"int\":\"5\"}]},{\"prim\":\"SWAP\"\
+                      },{\"prim\":\"EXEC\"},{\"prim\":\"DROP\"},{\"prim\":\"SWAP\"},{\"\
+                      prim\":\"DUP\"},{\"prim\":\"DUG\",\"args\":[{\"int\":\"2\"}]},{\"\
+                      prim\":\"CAR\"},{\"prim\":\"DIG\",\"args\":[{\"int\":\"5\"}]},{\"\
+                      prim\":\"SWAP\"},{\"prim\":\"EXEC\"},{\"prim\":\"DROP\"},{\"prim\"\
+                      :\"PUSH\",\"args\":[{\"prim\":\"mutez\"},{\"int\":\"0\"}]},{\"\
+                      prim\":\"AMOUNT\"},{\"prim\":\"COMPARE\"},{\"prim\":\"NEQ\"},{\"\
+                      prim\":\"IF\",\"args\":[[{\"prim\":\"PUSH\",\"args\":[{\"prim\"\
+                      :\"string\"},{\"string\":\"SELL\"}]},{\"prim\":\"DIG\",\"args\"\
+                      :[{\"int\":\"3\"}]},{\"prim\":\"SWAP\"},{\"prim\":\"EXEC\"},{\"\
+                      prim\":\"FAILWITH\"}],[{\"prim\":\"DIG\",\"args\":[{\"int\":\"\
+                      2\"}]},{\"prim\":\"DROP\"}]]},{\"prim\":\"SELF_ADDRESS\"},{\"\
+                      prim\":\"SENDER\"},{\"prim\":\"DUP\",\"args\":[{\"int\":\"3\"\
+                      }]},{\"prim\":\"GET\",\"args\":[{\"int\":\"4\"}]},{\"prim\":\"\
+                      PAIR\"},{\"prim\":\"DUP\",\"args\":[{\"int\":\"3\"}]},{\"prim\"\
+                      :\"CAR\"},{\"prim\":\"CDR\"},{\"prim\":\"DUP\",\"args\":[{\"int\"\
+                      :\"4\"}]},{\"prim\":\"CAR\"},{\"prim\":\"CAR\"},{\"prim\":\"PAIR\"\
+                      },{\"prim\":\"PAIR\"},{\"prim\":\"PAIR\"},{\"prim\":\"DIG\",\"\
+                      args\":[{\"int\":\"3\"}]},{\"prim\":\"SWAP\"},{\"prim\":\"EXEC\"\
+                      },{\"prim\":\"SENDER\"},{\"prim\":\"DIG\",\"args\":[{\"int\":\"\
+                      2\"}]},{\"prim\":\"SWAP\"},{\"prim\":\"PAIR\"},{\"prim\":\"DUP\"\
+                      ,\"args\":[{\"int\":\"3\"}]},{\"prim\":\"GET\",\"args\":[{\"int\"\
+                      :\"4\"}]},{\"prim\":\"DIG\",\"args\":[{\"int\":\"3\"}]},{\"prim\"\
+                      :\"DUP\"},{\"prim\":\"GET\",\"args\":[{\"int\":\"3\"}]},{\"prim\"\
+                      :\"DIG\",\"args\":[{\"int\":\"3\"}]},{\"prim\":\"DUP\",\"args\"\
+                      :[{\"int\":\"4\"}]},{\"prim\":\"SWAP\"},{\"prim\":\"SOME\"},{\"\
+                      prim\":\"SWAP\"},{\"prim\":\"UPDATE\"},{\"prim\":\"UPDATE\",\"\
+                      args\":[{\"int\":\"3\"}]},{\"prim\":\"PUSH\",\"args\":[{\"prim\"\
+                      :\"nat\"},{\"int\":\"1\"}]},{\"prim\":\"DIG\",\"args\":[{\"int\"\
+                      :\"2\"}]},{\"prim\":\"ADD\"},{\"prim\":\"UPDATE\",\"args\":[{\"\
+                      int\":\"4\"}]},{\"prim\":\"NIL\",\"args\":[{\"prim\":\"operation\"\
+                      }]},{\"prim\":\"DIG\",\"args\":[{\"int\":\"2\"}]},{\"prim\":\"\
+                      CONS\"},{\"prim\":\"PAIR\"}]]}]]}]]}]},{\"kind\":\"temporary\"\
+                      ,\"id\":\"proto.009-PsFLoren.michelson_v1.script_rejected\",\"\
+                      location\":372,\"with\":{\"prim\":\"Pair\",\"args\":[{\"prim\"\
+                      :\"Pair\",\"args\":[{\"string\":\"WRONG_TEZ_PRICE\"},{\"int\"\
+                      :\"4000000\"}]},{\"int\":\"1000000\"}]}}]}}}],\"signature\":\"\
+                      edsigtkpiSSschcaCt9pUVrpNPf7TTcgvgDEDD6NCEHMy8NNQJCGnMfLZzYoQj74yLjo9wx6MPVV29CvVzgi7qEcEUok3k7AuMg\"\
+                      }\n"
+        servers:
+        - url: https://florencenet.wert.ecadinfra.com
+        - url: http://localhost:8080
+        - url: https://virtserver.swaggerhub.com/gvych/tezos-stub/0.0.1
+        x-swagger-router-controller: Default
+      servers:
+      - url: https://florencenet.wert.ecadinfra.com
+      - url: http://localhost:8080
+    ? /chains/main/blocks/BM2PbtukTjuQJp22pgEpRK35FeptaCwhNQDRKCAEQyBoemRCV6j/context/contracts/tz1VJEC3vN7AcQEF8sDDDBrPzYsqEQro1tF6/counter
+    : get:
+        description: Auto generated using Swagger Inspector
+        operationId: chainsMainBlocksBM2PbtukTjuQJp22pgEpRK35FeptaCwhNQDRKCAEQyBoemRCV6jContextContractsTz1VJEC3vN7AcQEF8sDDDBrPzYsqEQro1tF6CounterGET
+        responses:
+          "200":
+            description: Auto generated using Swagger Inspector
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties: {}
+                  example: {}
+                  x-content-type: application/json
+                examples:
+                  "0":
+                    value: |
+                      "431714"
+        servers:
+        - url: https://florencenet.wert.ecadinfra.com
+        - url: http://localhost:8080
+        x-swagger-router-controller: Default
+      servers:
+      - url: https://florencenet.wert.ecadinfra.com
+      - url: http://localhost:8080
+    /chains/main/blocks/head-1/hash:
+      get:
+        description: Auto generated using Swagger Inspector
+        operationId: chainsMainBlocksHead_1HashGET
+        responses:
+          "200":
+            description: Auto generated using Swagger Inspector
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties: {}
+                  example: BLCZzFGzNzu95ZrKbsX3kuj8wsMea5axogRyENrnWpNX4adC8cJ
+                  x-content-type: application/json
+                examples:
+                  "0":
+                    value: BLCZzFGzNzu95ZrKbsX3kuj8wsMea5axogRyENrnWpNX4adC8cJ
+          default:
+            description: Default return value
+            content:
+              application/json:
+                example: alskjdf
+        servers:
+        - url: https://florencenet.wert.ecadinfra.com
+        - url: http://localhost:8080
+        x-swagger-router-controller: Default
+      servers:
+      - url: https://florencenet.wert.ecadinfra.com
+      - url: http://localhost:8080
+    /chains/main/blocks/head-40/hash:
+      get:
+        description: Auto generated using Swagger Inspector
+        operationId: chainsMainBlocksHead_40HashGET
+        responses:
+          "200":
+            description: Auto generated using Swagger Inspector
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties: {}
+                  example: {}
+                  x-content-type: application/json
+                examples:
+                  "0":
+                    value: |
+                      "BLwQTEYPyc5WMCFh8HojbwL6VeNExd8LD6egZEDFMGPNvGYazcC"
+        servers:
+        - url: https://florencenet.wert.ecadinfra.com
+        - url: http://localhost:8080
+        x-swagger-router-controller: Default
+      servers:
+      - url: https://florencenet.wert.ecadinfra.com
+      - url: http://localhost:8080
+  components:
+    schemas:
+      inline_response_200:
+        type: object
+        properties:
+          entrypoints:
+            type: object
+            properties:
+              cancel:
+                type: object
+                properties:
+                  prim:
+                    type: string
+                example:
+                  prim: prim
+              sell:
+                type: object
+                properties:
+                  args:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        args:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              prim:
+                                type: string
+                              annots:
+                                type: array
+                                items:
+                                  type: string
+                            example:
+                              prim: prim
+                              annots:
+                              - annots
+                              - annots
+                        prim:
+                          type: string
+                        annots:
+                          type: array
+                          items:
+                            type: string
+                      example:
+                        args:
+                        - prim: prim
+                          annots:
+                          - annots
+                          - annots
+                        - prim: prim
+                          annots:
+                          - annots
+                          - annots
+                        prim: prim
+                        annots:
+                        - annots
+                        - annots
+                  prim:
+                    type: string
+                example:
+                  args:
+                  - args:
+                    - prim: prim
+                      annots:
+                      - annots
+                      - annots
+                    - prim: prim
+                      annots:
+                      - annots
+                      - annots
+                    prim: prim
+                    annots:
+                    - annots
+                    - annots
+                  - args:
+                    - prim: prim
+                      annots:
+                      - annots
+                      - annots
+                    - prim: prim
+                      annots:
+                      - annots
+                      - annots
+                    prim: prim
+                    annots:
+                    - annots
+                    - annots
+                  prim: prim
+              buy:
+                type: object
+                properties:
+                  args:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        prim:
+                          type: string
+                        annots:
+                          type: array
+                          items:
+                            type: string
+                      example:
+                        prim: prim
+                        annots:
+                        - annots
+                        - annots
+                  prim:
+                    type: string
+                example:
+                  args:
+                  - prim: prim
+                    annots:
+                    - annots
+                    - annots
+                  - prim: prim
+                    annots:
+                    - annots
+                    - annots
+                  prim: prim
+              admin:
+                type: object
+                properties:
+                  args:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        args:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              prim:
+                                type: string
+                              annots:
+                                type: array
+                                items:
+                                  type: string
+                            example:
+                              prim: prim
+                              annots:
+                              - annots
+                              - annots
+                        prim:
+                          type: string
+                      example:
+                        args:
+                        - prim: prim
+                          annots:
+                          - annots
+                          - annots
+                        - prim: prim
+                          annots:
+                          - annots
+                          - annots
+                        prim: prim
+                  prim:
+                    type: string
+                example:
+                  args:
+                  - args:
+                    - prim: prim
+                      annots:
+                      - annots
+                      - annots
+                    - prim: prim
+                      annots:
+                      - annots
+                      - annots
+                    prim: prim
+                  - args:
+                    - prim: prim
+                      annots:
+                      - annots
+                      - annots
+                    - prim: prim
+                      annots:
+                      - annots
+                      - annots
+                    prim: prim
+                  prim: prim
+              set_admin:
+                type: object
+                properties:
+                  prim:
+                    type: string
+                example:
+                  prim: prim
+              confirm_admin:
+                type: object
+                properties:
+                  prim:
+                    type: string
+                example:
+                  prim: prim
+              pause:
+                type: object
+                properties:
+                  prim:
+                    type: string
+                example:
+                  prim: prim
+            example:
+              cancel:
+                prim: prim
+              sell:
+                args:
+                - args:
+                  - prim: prim
+                    annots:
+                    - annots
+                    - annots
+                  - prim: prim
+                    annots:
+                    - annots
+                    - annots
+                  prim: prim
+                  annots:
+                  - annots
+                  - annots
+                - args:
+                  - prim: prim
+                    annots:
+                    - annots
+                    - annots
+                  - prim: prim
+                    annots:
+                    - annots
+                    - annots
+                  prim: prim
+                  annots:
+                  - annots
+                  - annots
+                prim: prim
+              buy:
+                args:
+                - prim: prim
+                  annots:
+                  - annots
+                  - annots
+                - prim: prim
+                  annots:
+                  - annots
+                  - annots
+                prim: prim
+              admin:
+                args:
+                - args:
+                  - prim: prim
+                    annots:
+                    - annots
+                    - annots
+                  - prim: prim
+                    annots:
+                    - annots
+                    - annots
+                  prim: prim
+                - args:
+                  - prim: prim
+                    annots:
+                    - annots
+                    - annots
+                  - prim: prim
+                    annots:
+                    - annots
+                    - annots
+                  prim: prim
+                prim: prim
+              set_admin:
+                prim: prim
+              confirm_admin:
+                prim: prim
+              pause:
+                prim: prim
+        example:
+          entrypoints:
+            cancel:
+              prim: prim
+            sell:
+              args:
+              - args:
+                - prim: prim
+                  annots:
+                  - annots
+                  - annots
+                - prim: prim
+                  annots:
+                  - annots
+                  - annots
+                prim: prim
+                annots:
+                - annots
+                - annots
+              - args:
+                - prim: prim
+                  annots:
+                  - annots
+                  - annots
+                - prim: prim
+                  annots:
+                  - annots
+                  - annots
+                prim: prim
+                annots:
+                - annots
+                - annots
+              prim: prim
+            buy:
+              args:
+              - prim: prim
+                annots:
+                - annots
+                - annots
+              - prim: prim
+                annots:
+                - annots
+                - annots
+              prim: prim
+            admin:
+              args:
+              - args:
+                - prim: prim
+                  annots:
+                  - annots
+                  - annots
+                - prim: prim
+                  annots:
+                  - annots
+                  - annots
+                prim: prim
+              - args:
+                - prim: prim
+                  annots:
+                  - annots
+                  - annots
+                - prim: prim
+                  annots:
+                  - annots
+                  - annots
+                prim: prim
+              prim: prim
+            set_admin:
+              prim: prim
+            confirm_admin:
+              prim: prim
+            pause:
+              prim: prim
+      chainsmainblocksheadhelpersscriptsrun_operation_operation_parameters_value_args:
+        type: object
+        properties:
+          int:
+            type: string
+      chainsmainblocksheadhelpersscriptsrun_operation_operation_parameters_value:
+        type: object
+        properties:
+          args:
+            type: array
+            items:
+              $ref: '#/components/schemas/chainsmainblocksheadhelpersscriptsrun_operation_operation_parameters_value_args'
+          prim:
+            type: string
+      chainsmainblocksheadhelpersscriptsrun_operation_operation_parameters:
+        type: object
+        properties:
+          entrypoint:
+            type: string
+          value:
+            $ref: '#/components/schemas/chainsmainblocksheadhelpersscriptsrun_operation_operation_parameters_value'
+      chainsmainblocksheadhelpersscriptsrun_operation_operation_contents:
+        type: object
+        properties:
+          amount:
+            type: string
+          gas_limit:
+            type: string
+          storage_limit:
+            type: string
+          kind:
+            type: string
+          fee:
+            type: string
+          destination:
+            type: string
+          source:
+            type: string
+          counter:
+            type: string
+          parameters:
+            $ref: '#/components/schemas/chainsmainblocksheadhelpersscriptsrun_operation_operation_parameters'
+      chainsmainblocksheadhelpersscriptsrun_operation_operation:
+        type: object
+        properties:
+          contents:
+            type: array
+            items:
+              $ref: '#/components/schemas/chainsmainblocksheadhelpersscriptsrun_operation_operation_contents'
+          signature:
+            type: string
+          branch:
+            type: string
+      scripts_run_operation_body:
+        type: object
+        properties:
+          chain_id:
+            type: string
+          operation:
+            $ref: '#/components/schemas/chainsmainblocksheadhelpersscriptsrun_operation_operation'
+contentType: yaml

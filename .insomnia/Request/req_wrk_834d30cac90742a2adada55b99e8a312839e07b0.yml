@@ -1,0 +1,55 @@
+_id: req_wrk_834d30cac90742a2adada55b99e8a312839e07b0
+type: Request
+parentId: wrk_834d30cac90742a2adada55b99e8a312
+modified: 1635148481599
+created: 1635148481599
+url: "{{ base_url }}/chains/main/blocks/head/helpers/scripts/run_operation"
+name: /chains/main/blocks/head/helpers/scripts/run_operation
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "chain_id": "string",
+      "operation": {
+        "contents": [
+          {
+            "amount": "string",
+            "gas_limit": "string",
+            "storage_limit": "string",
+            "kind": "string",
+            "fee": "string",
+            "destination": "string",
+            "source": "string",
+            "counter": "string",
+            "parameters": {
+              "entrypoint": "string",
+              "value": {
+                "args": [
+                  {
+                    "int": "string"
+                  }
+                ],
+                "prim": "string"
+              }
+            }
+          }
+        ],
+        "signature": "string",
+        "branch": "string"
+      }
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1635148481599
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

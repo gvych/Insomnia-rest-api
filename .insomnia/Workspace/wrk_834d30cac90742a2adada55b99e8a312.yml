@@ -1,0 +1,8 @@
+_id: wrk_834d30cac90742a2adada55b99e8a312
+type: Workspace
+parentId: null
+modified: 1635148481619
+created: 1635148481619
+name: Tesoz node RPC 0.0.1
+description: Calls to tzk node
+scope: design
