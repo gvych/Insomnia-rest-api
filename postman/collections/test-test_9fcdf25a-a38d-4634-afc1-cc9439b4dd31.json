@@ -1,0 +1,201 @@
+{
+    "info": {
+        "_postman_id": "79137e40-b1a1-4d73-b876-1c24b31eb6b1",
+        "name": "test-test",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Sample endpoint: Returns details about a particular user",
+            "event": [
+                {
+                    "listen": "test",
+                    "script": {
+                        "id": "260676af-aca3-4dd2-aecb-0d6103bd97d2",
+                        "exec": [
+                            "",
+                            "pm.test(\"Status code is 500\", function () {",
+                            "    pm.response.to.have.status(500);",
+                            "});"
+                        ],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
+            "id": "9afcd98c-85e7-4832-8e65-78364b608baf",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ],
+                "url": {
+                    "raw": "{{url}}/user?id=71597987",
+                    "host": [
+                        "{{url}}"
+                    ],
+                    "path": [
+                        "user"
+                    ],
+                    "query": [
+                        {
+                            "key": "id",
+                            "value": "-42439065",
+                            "description": "(Required) ID of the user",
+                            "disabled": true
+                        },
+                        {
+                            "key": "id",
+                            "value": "71597987",
+                            "type": "text"
+                        }
+                    ]
+                }
+            },
+            "response": [
+                {
+                    "id": "5914158b-8eae-479c-a47a-7e631bfa7ed9",
+                    "name": "Sample response: Details about a user by ID",
+                    "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/user?id=-42439065",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "user"
+                            ],
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "-42439065"
+                                }
+                            ]
+                        }
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "json",
+                    "header": [
+                        {
+                            "disabled": false,
+                            "description": "A link to the next page of responses",
+                            "key": "x-next",
+                            "value": "in eiusmod cons"
+                        },
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "cookie": [],
+                    "responseTime": null,
+                    "body": "{\n  \"id\": 71597987,\n  \"name\": \"laborum aliquip quis\",\n  \"tag\": \"ullamco laboris nostrud\"\n}"
+                },
+                {
+                    "id": "e11a5c6d-753a-4eb6-988e-83e8b3f2beed",
+                    "name": "Unexpected error",
+                    "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/user?id=-42439065",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "user"
+                            ],
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "-42439065"
+                                }
+                            ]
+                        }
+                    },
+                    "status": "Internal Server Error",
+                    "code": 500,
+                    "_postman_previewlanguage": "json",
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "cookie": [],
+                    "responseTime": null,
+                    "body": "{\n  \"code\": -3907728,\n  \"message\": \"ipsum quis est lab\"\n}"
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "basic",
+        "basic": [
+            {
+                "key": "username",
+                "value": "<Basic Auth Username>",
+                "type": "string"
+            },
+            {
+                "key": "password",
+                "value": "<Basic Auth Password>",
+                "type": "string"
+            }
+        ]
+    },
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "id": "bcc2efb3-1f05-4af0-8191-c7e084bf4104",
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "id": "540d9f7d-2b46-4900-9426-8b53a7b4af12",
+                "type": "text/javascript",
+                "exec": [
+                    "",
+                    "pm.test(\"Status code is 200\", function () {",
+                    "    pm.response.to.have.status(200);",
+                    "});"
+                ]
+            }
+        }
+    ],
+    "variable": [
+        {
+            "id": "7528fd80-a056-4f5e-a60a-214a287b8fb1",
+            "key": "baseUrl",
+            "value": "localhost:3000",
+            "type": "string",
+            "disabled": true
+        }
+    ]
+}
