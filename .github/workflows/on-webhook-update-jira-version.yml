@@ -17,6 +17,4 @@ jobs:
         head-branch-regex: "jira-release-num-${{github.event.client_payload.release_id}}}}"
         body-template: |
           ${{github.event.client_payload.release_notes_text}}
-          Merging into '%basebranch%'
-          [Link to %headbranch%](https://url/to/browse/ticket/%headbranch%)
         body-update-action: 'replace'
