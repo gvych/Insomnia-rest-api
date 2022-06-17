@@ -1,0 +1,18 @@
+name: Update release-branch description
+
+on:
+  repository_dispatch:
+    types: [update-release-branch]
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: hmarr/debug-action@v2
+
+    - name: update-pull-request
+      uses: kt3k/update-pr-description@v1.0.1
+      with:
+        pr_body: ${{github.event.client_payload.release_notes_text}}
+        destination_branch: jira-release-num-${{github.event.client_payload.release_id}}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
