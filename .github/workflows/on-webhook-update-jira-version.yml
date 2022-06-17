@@ -10,11 +10,17 @@ jobs:
     steps:
     - uses: hmarr/debug-action@v2
 
+    - name: Find Pull Request
+      uses: juliangruber/find-pull-request-action@v1
+      id: find-pull-request
+      with:
+        branch: "jira-release-num-${{github.event.client_payload.release_id}}}}"
+
     - name: update-pull-request
       uses: tzkhan/pr-update-action@v2
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
-        head-branch-regex: "jira-release-num-${{github.event.client_payload.release_id}}}}"
+        head-branch-regex: "jira-release-num-${{github.event.client_payload.release_id}}"
         body-template: |
           ${{github.event.client_payload.release_notes_text}}
         body-update-action: 'replace'
