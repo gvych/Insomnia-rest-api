@@ -11,8 +11,12 @@ jobs:
     - uses: hmarr/debug-action@v2
 
     - name: update-pull-request
-      uses: kt3k/update-pr-description@v1.0.1
+      uses: tzkhan/pr-update-action@v2
       with:
-        pr_body: ${{github.event.client_payload.release_notes_text}}
-        destination_branch: jira-release-num-${{github.event.client_payload.release_id}}
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"
+        head-branch-regex: "jira-release-num-${{github.event.client_payload.release_id}}}}"
+        body-template: |
+          ${{github.event.client_payload.release_notes_text}}
+          Merging into '%basebranch%'
+          [Link to %headbranch%](https://url/to/browse/ticket/%headbranch%)
+        body-update-action: 'replace'
