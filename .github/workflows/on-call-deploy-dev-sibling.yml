@@ -16,8 +16,11 @@ jobs:
     steps:
       - uses: hmarr/debug-action@v2
       - env:
-          MESSAGE: ${{ github.event }}
+          MESSAGE: ${{ github.event.client_payload.release_id }}
         run: echo $MESSAGE
       - env:
-          MESSAGE: ${{ github.event.client_payload }}
+          MESSAGE: ${{ github.event.client_payload.release_name }}
+        run: echo $MESSAGE
+      - env:
+          MESSAGE: ${{ github.event.client_payload.release_description }}
         run: echo $MESSAGE
