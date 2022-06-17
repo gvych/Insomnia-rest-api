@@ -14,19 +14,19 @@ jobs:
         with:
           fetch-depth: 0
 
-      - run: git checkout -b jira-release-num-${{github.event.client_payload.release_name}}
+      - run: git checkout -b jira-release-num-${{github.event.client_payload.release_id}}
       - run: echo ${{github.event.client_payload.release_name}} >> .github/release-branches-tracking.txt && git add -A && git status && git diff && git diff --cached
 
       - uses: stefanzweifel/git-auto-commit-action@v4.12.0
         with:
-          branch: jira-release-num-${{github.event.client_payload.release_name}}
+          branch: jira-release-num-${{github.event.client_payload.release_id}}
           commit_message: Automated Change
-      - run: git push --set-upstream origin jira-release-num-${{github.event.client_payload.release_name}}
+      - run: git push --set-upstream origin jira-release-num-${{github.event.client_payload.release_id}}
 
       - name: Create Pull-Request
         uses: thomaseizinger/create-pull-request@1.2.2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          head:  jira-release-num-${{github.event.client_payload.release_name}}
+          head:  jira-release-num-${{github.event.client_payload.release_id}}
           base: master
           title: "[${{github.event.client_payload.release_name}}] ${{github.event.client_payload.release_description}}"
