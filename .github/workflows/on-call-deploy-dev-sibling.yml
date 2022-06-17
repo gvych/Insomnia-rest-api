@@ -1,0 +1,19 @@
+name: Create release-branch 
+
+on:
+  workflow_dispatch:
+    types: [create-release-branch]
+#    inputs:
+#      git_ref:
+#        description: 'tag, branch or commit sha which will be deployed'
+#        required: true
+#        type: string
+
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          MESSAGE: ${{ github.event.client_payload }}
+        run: echo $MESSAGE
