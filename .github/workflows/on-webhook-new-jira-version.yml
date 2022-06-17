@@ -29,4 +29,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           head:  ${{github.event.client_payload.release_name}}
           base: master
-          title: [num:${{github.event.client_payload.release_id}}] ${{github.event.client_payload.release_name}} ${{github.event.client_payload.release_description}}
+          title: "[num:${{github.event.client_payload.release_id}}] ${{github.event.client_payload.release_name}} ${{github.event.client_payload.release_description}}"
