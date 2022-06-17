@@ -14,7 +14,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - run: git checkout -b ${{github.event.client_payload.release_name}} ${{github.event.client_payload.release_name}}
+      - run: git checkout -b ${{github.event.client_payload.release_name}}
       - run: echo ${{github.event.client_payload.release_name}} >> .github/release-branches-tracking.txt && git add -A && git status && git diff && git diff --cached
 
       - uses: stefanzweifel/git-auto-commit-action@v4.12.0
