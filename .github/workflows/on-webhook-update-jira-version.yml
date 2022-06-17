@@ -16,11 +16,9 @@ jobs:
       with:
         branch: "jira-release-num-${{github.event.client_payload.release_id}}"
 
-    - name: update-pull-request
-      uses: tzkhan/pr-update-action@v2
+    - name: pull-request
+      uses: repo-sync/pull-request@v2
       with:
-        repo-token: "${{ secrets.GITHUB_TOKEN }}"
-        head-branch-regex: "jira-release-num-${{github.event.client_payload.release_id}}"
-        body-template: |
-          ${{github.event.client_payload.release_notes_text}}
-        body-update-action: 'replace'
+        source_branch: "jira-release-num-${{github.event.client_payload.release_id}}"
+        destination_branch: "master"                      # If blank, default: master
+        pr_body: ${{github.event.client_payload.release_notes_text}}
